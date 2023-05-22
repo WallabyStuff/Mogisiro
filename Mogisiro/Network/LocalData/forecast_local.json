@@ -1,0 +1,77 @@
+[
+  {
+    "statusDescription": "쾌적",
+    "comment": "오늘은 모기가 조용한 편이네요",
+    "imageSrc": "mogi_dead",
+    "mosquitoActivityIndex": {
+      "min": 0,
+      "max": 25
+    },
+    "situations": [
+      "모기 활동이 거의 없음",
+      "모기유충 서식지가 형성되지 않음"
+    ],
+    "tips": [
+      "모기 침입경로 보완",
+      "방충망 사용",
+      "모기 방제 필요하지 않음"
+    ]
+  },
+  {
+    "statusDescription": "관심",
+    "comment": "주변에 모기가 있는지 살펴봐요",
+    "imageSrc": "mogi_warning",
+    "mosquitoActivityIndex": {
+      "min": 25,
+      "max": 50
+    },
+    "situations": [
+      "모기유충 서식지가 20% 이내로 형성된 단계",
+      "외부기온이 낮은 경우 집안으로 침입이 두드러지게 나타남"
+    ],
+    "tips": [
+      "문과 방충망 등 모기 침입통로 수리",
+      "주변 모기 발생원 및 서식처 비우기",
+      "정화조 및 환기구에 설치"
+    ]
+  },
+  {
+    "statusDescription": "주의",
+    "comment": "모기랑 같은 공간에 있을 확률이 높아요",
+    "imageSrc": "mogi_launchtime",
+    "mosquitoActivityIndex": {
+      "min": 50,
+      "max": 75
+    },
+    "situations": [
+      "모기유충 서식지가 20~50% 범위로 형성된 단계",
+      "집안으로 침입하는 모기가 두드러짐"
+    ],
+    "tips": [
+      "고인 물 비우기",
+      "침대에 모기장 사용",
+      "모기유충 서식처 차단",
+      "집주변 모기 발견시 에어로졸 방제",
+      "야외 활동시 모기퇴치제 사용"
+    ]
+  },
+  {
+    "statusDescription": "불쾌",
+    "comment": "모기와 함께 춤을🎶",
+    "imageSrc": "mogi_dancing",
+    "mosquitoActivityIndex": {
+      "min": 75,
+      "max": 100
+    },
+    "situations": [
+      "모기유충 서식지가 50~100% 범위로 형성된 단계",
+      "집안으로 침입하는 모기가 빈번함"
+    ],
+    "tips": [
+      "야외활동 자제 및 침대에 모기장 사용",
+      "집주변 가정용 살충제 처리",
+      "야외활동시 반드시 퇴치제 및 기피제 사용",
+      "대형 모기 발생원 보건소에 신고"
+    ]
+  }
+]
