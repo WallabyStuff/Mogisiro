@@ -19,7 +19,7 @@ struct ContentView: View {
   var body: some View {
     VStack {
       Text("BMHANNAPro 폰트")
-        .font(.custom("BMHANNAPro", size: 20))
+        .font(.bmPro(size: 20))
     }
     .padding()
   }

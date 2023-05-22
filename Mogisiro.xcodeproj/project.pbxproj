@@ -24,6 +24,7 @@
 		8EB99B222A1A845C0032C02E /* tips_local.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E529D2B2A19CC4400AD5E8C /* tips_local.json */; };
 		8EB99B242A1B08740032C02E /* TipLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B232A1B08740032C02E /* TipLocal.swift */; };
 		8EB99B282A1B201A0032C02E /* BMHANNAPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EB99B272A1B20160032C02E /* BMHANNAPro.ttf */; };
+		8EB99B2C2A1B222C0032C02E /* Font+bmpro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B2B2A1B222C0032C02E /* Font+bmpro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		8EAD171C2A14F08800E0C812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EB99B232A1B08740032C02E /* TipLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipLocal.swift; sourceTree = "<group>"; };
 		8EB99B272A1B20160032C02E /* BMHANNAPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNAPro.ttf; sourceTree = "<group>"; };
+		8EB99B2B2A1B222C0032C02E /* Font+bmpro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+bmpro.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +158,18 @@
 				8E529D2A2A19C5FF00AD5E8C /* Model */,
 				8EAD171A2A14EBFB00E0C812 /* Network */,
 				8EAD171B2A14EC0400E0C812 /* View */,
+				8EB99B2A2A1B22040032C02E /* Utils */,
 				8EAD17092A14CFCD00E0C812 /* Preview Content */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		8EB99B2A2A1B22040032C02E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8EB99B2B2A1B222C0032C02E /* Font+bmpro.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 				8EB99B242A1B08740032C02E /* TipLocal.swift in Sources */,
 				8E529D342A1A4F8600AD5E8C /* MosquitoForecast.swift in Sources */,
 				8E529D322A19E0C400AD5E8C /* ForecastLocal.swift in Sources */,
+				8EB99B2C2A1B222C0032C02E /* Font+bmpro.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
