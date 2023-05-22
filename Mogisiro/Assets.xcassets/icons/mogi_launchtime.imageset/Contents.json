@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "mogi_launchtime.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
