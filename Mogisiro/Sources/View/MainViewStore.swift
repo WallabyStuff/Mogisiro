@@ -15,6 +15,13 @@ class MainViewStore: ObservableObject {
   private var cancellableBag = Set<AnyCancellable>()
   private var service = MosquitoNetworkService()
   
+  @Published var forecast: MosquitoForecast?
+  @Published var areaType: AreaType = .house {
+    didSet {
+      setupMosquitoForecast(areaType: areaType)
+    }
+  }
+  
   
   // MARK: - Initializers
   
@@ -30,26 +37,20 @@ class MainViewStore: ObservableObject {
   }
   
   private func setupData() {
-    setupMosquitoForecast()
+    setupMosquitoForecast(areaType: areaType)
   }
   
-  private func setupMosquitoForecast() {
-    service.requestWeekly(Date(), type: .house)
+  private func setupMosquitoForecast(areaType: AreaType) {
+    service.requestWeekly(Date(), type: areaType)
+      .subscribe(on: DispatchQueue.global(qos: .default))
+      .receive(on: DispatchQueue.main)
       .flatMap { weeklyValue in
         return self.service.requestForecastWeekly(weeklyValue)
       }
       .sink { error in
         print(error)
-      } receiveValue: { forecast in
-        print(forecast)
-      }
-      .store(in: &cancellableBag)
-    
-    service.requestTip()
-      .sink { error in
-        print(error)
-      } receiveValue: { tips in
-        print(tips)
+      } receiveValue: { [weak self] forecast in
+        self?.forecast = forecast
       }
       .store(in: &cancellableBag)
   }
