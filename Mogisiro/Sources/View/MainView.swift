@@ -146,8 +146,7 @@ struct MainView: View {
         .frame(width: 60, height: 60)
       }
       .sheet(isPresented: $isDetailViewShown) {
-        Text("DetailView")
-          .font(.bmPro(size: 24))
+        DetailGuidelineView()
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)

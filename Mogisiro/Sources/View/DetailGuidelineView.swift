@@ -6,185 +6,74 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct DetailGuidelineView: View {
-  @State private var showModal = false
+  
+  // MARK: - Properties
+  
+  @StateObject private var store = DetailViewStore()
+  
+  
+  // MARK: - Views
+  
   var body: some View {
-    VStack {
-      Button(action: {
-        self.showModal = true
-      }) {
-        Text("물음표 버튼").bold()
+    VStack(spacing: 0) {
+      VStack {
+        Text("상세 대처법")
+          .font(.bmPro(size: 18))
+          .foregroundColor(Color("black"))
+          .padding(16)
       }
-      .frame(width: 80,height: 30, alignment: .center)
-      .sheet(isPresented: self.$showModal) {
-        ModalView()
+        
+      List(store.guidelines, id: \.self) { guideline in
+        section(guideline)
+      }
+      .listStyle(.sidebar)
+      .accentColor(Color("pink"))
+    }
+  }
+    
+  private func section(_ guideline: TipLocal) -> some View {
+    Section(header: Text(guideline.situation)
+      .font(.bmPro(size: 20))
+      .frame(maxWidth: .infinity, alignment: .leading)
+      .foregroundColor(Color("black"))
+    ) {
+      subTipsView(guideline.tips)
+        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+    }
+    .listRowInsets(.init(top: 40, leading: 8, bottom: 20, trailing: 8))
+  }
+  
+  private func subTipsView(_ subTips: [SubTip]) -> some View {
+    VStack(spacing: 20) {
+      ForEach(Array(subTips.enumerated()), id: \.offset) { index, subTip in
+        VStack(spacing: 12) {
+          Text("\(index + 1). \(subTip.title)")
+            .font(.bmPro(size: 17))
+            .foregroundColor(Color("black"))
+            .frame(maxWidth: .infinity, alignment: .leading)
+          
+          VStack {
+            ForEach(subTip.subTips, id: \.self) { tip in
+              Text("- \(tip)")
+                .font(.system(size: 13, weight: .medium))
+                .foregroundColor(Color("black"))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.vertical, 4)
+            }
+          }
+          .modifier(GroupModifier())
+        }
       }
     }
+    .padding(24)
   }
 }
 
 struct DetailGuideline_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailGuidelineView()
-    }
-}
-
-struct ModalView: View {
-  @ObservedObject private var viewStore = DetailViewStore()
-  @Environment(\.presentationMode) var presentation
-  
-  var body: some View {
-    VStack {
-      if let information = viewStore.detailLocal {
-        Text("상세 대처법")
-          .font(.bmPro(size: 24))
-          .fontWeight(.bold)
-          .padding(.top, 30)
-          .padding(.bottom, 30)
-        
-        List {
-          Section(header: Text(information.result[0].action)
-            .font(.bmPro(size: 23))
-            .fontWeight(.bold)
-            .foregroundColor(.black)
-            .padding(.top, 20)
-            .padding(.bottom, 20))
-          {
-            
-            Text(information.result[0].content[0].title)
-              .font(.bmPro(size: 18))
-              .fontWeight(.bold)
-            GroupBox {
-              Text(information.result[0].content[0].description)
-                .font(.callout)
-                .bold()
-                .frame(width: 300)
-            }
-            .padding()
-            
-            Text(information.result[0].content[1].title)
-              .font(.bmPro(size: 18))
-              .fontWeight(.bold)
-            GroupBox {
-              Text(information.result[0].content[1].description)
-                .font(.callout)
-                .bold()
-                .frame(width: 300)
-            }
-            .padding()
-            
-            Text(information.result[0].content[2].title)
-              .font(.bmPro(size: 18))
-              .fontWeight(.bold)
-            GroupBox {
-              Text(information.result[0].content[2].description)
-                .font(.callout)
-                .bold()
-                .frame(width: 300)
-            }
-            .padding()
-          }
-          
-          Divider()
-          Section(header: Text(information.result[1].action)
-            .font(.bmPro(size: 20))
-            .fontWeight(.bold)
-            .foregroundColor(.black)
-            .padding(.top, 20)
-            .padding(.bottom, 20)) {
-              
-              Text(information.result[1].content[0].title)
-                .font(.bmPro(size: 18))
-                .fontWeight(.bold)
-              GroupBox {
-                Text(information.result[1].content[0].description)
-                  .font(.callout)
-                  .bold()
-                  .frame(width: 300)
-              }
-              .padding()
-              
-              Text(information.result[1].content[1].title)
-                .font(.bmPro(size: 18))
-                .fontWeight(.bold)
-              GroupBox {
-                Text(information.result[1].content[1].description)
-                  .font(.callout)
-                  .bold()
-                  .frame(width: 300)
-              }
-              .padding()
-              
-              Text(information.result[1].content[2].title)
-                .font(.bmPro(size: 18))
-                .fontWeight(.bold)
-              GroupBox {
-                Text(information.result[1].content[2].description)
-                  .font(.callout)
-                  .bold()
-                  .frame(width: 300)
-              }
-              .padding()
-            }
-          
-          Divider()
-          Section(header: Text(information.result[2].action)
-            .font(.bmPro(size: 20))
-            .fontWeight(.bold)
-            .foregroundColor(.black)
-            .padding(.top, 20)
-            .padding(.bottom, 20)) {
-              Text(information.result[2].content[0].title)
-                .font(.bmPro(size: 18))
-                .fontWeight(.bold)
-              GroupBox {
-                Text(information.result[2].content[0].description)
-                  .font(.callout)
-                  .bold()
-                  .frame(width: 300)
-              }
-              .padding()
-              
-              Text(information.result[2].content[1].title)
-                .font(.bmPro(size: 18))
-                .fontWeight(.bold)
-              GroupBox {
-                Text(information.result[2].content[1].description)
-                  .font(.callout)
-                  .bold()
-                  .frame(width: 300)
-              }
-              .padding()
-              
-              Text(information.result[2].content[2].title)
-                .font(.bmPro(size: 18))
-                .fontWeight(.bold)
-              GroupBox {
-                Text(information.result[2].content[2].description)
-                  .font(.callout)
-                  .bold()
-                  .frame(width: 300)
-              }
-              .padding()
-              
-              Text(information.result[2].content[3].title)
-                .font(.bmPro(size: 18))
-                .fontWeight(.bold)
-              GroupBox {
-                Text(information.result[2].content[3].description)
-                  .font(.callout)
-                  .bold()
-                  .frame(width: 300)
-              }
-              .padding()
-            }
-        }
-        .listStyle(SidebarListStyle())
-        .tint(.black)
-        .background(Color.white.ignoresSafeArea())
-        .scrollContentBackground(.hidden)
-      }
-    }
+  static var previews: some View {
+    DetailGuidelineView()
   }
 }

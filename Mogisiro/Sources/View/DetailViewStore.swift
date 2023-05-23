@@ -14,7 +14,7 @@ class DetailViewStore: ObservableObject {
   
   private var cancellableBag = Set<AnyCancellable>()
   private var service = MosquitoNetworkService()
-  var detailLocal: DetailLocal? = nil
+  @Published var guidelines = [TipLocal]()
   
   // MARK: - Initializers
   
@@ -34,11 +34,12 @@ class DetailViewStore: ObservableObject {
   }
   
   private func setupMosquitoForecast() {
-    service.requestDetail()
+    service.requestTip()
       .sink { error in
         print(error)
-      } receiveValue: { detail in
-        self.detailLocal = detail
+      } receiveValue: { tips in
+        self.guidelines = tips
       }
+      .store(in: &cancellableBag)
   }
 }
