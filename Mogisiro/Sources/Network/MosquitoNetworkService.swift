@@ -53,7 +53,14 @@ struct MosquitoNetworkService {
   }
   
   func requestWeekly(_ endDate: Date, type: AreaType) -> AnyPublisher<[MosquitoValue], Error> {
-    let endDate = Date()
+    let endDate = {
+      if Date.isMaintainingTime() {
+        return Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date()
+      } else {
+        return Date()
+      }
+    }()
+    
     let startDate = Calendar.current.date(byAdding: .day, value: -6, to: endDate)
     
     return (0...6)
@@ -123,5 +130,19 @@ extension Date {
     let format = "yyyy-MM-dd"
     dateFormatter.dateFormat = format
     return dateFormatter.string(from: self)
+  }
+  
+  static func isMaintainingTime() -> Bool {
+    let calendar = Calendar.current
+    let dateComponents = calendar.dateComponents([.hour], from: Date())
+    let hour = dateComponents.hour ?? 0
+    
+    switch hour {
+    case 0...3:
+      // 0시 ~ 오전3시
+      return true
+    default:
+      return false
+    }
   }
 }
