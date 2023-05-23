@@ -23,7 +23,7 @@ struct MainView: View {
   var body: some View {
     if let forecast = store.forecast {
       ZStack {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
           VStack(spacing: 24) {
             principleSection(forecast)
             
@@ -37,6 +37,7 @@ struct MainView: View {
             }
           }
           .padding(.horizontal , 28)
+          .padding(.top, 28)
           .padding(.bottom, 100)
         }
         
