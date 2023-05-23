@@ -11,6 +11,8 @@ struct MainView: View {
   
   // MARK: - Properties
   
+  @Environment(\.redactionReasons) var redactedReasons
+  
   @StateObject private var store = MainViewStore()
   @State var index = 0
   @State var isDetailViewShown = false
@@ -19,54 +21,58 @@ struct MainView: View {
   // MARK: - Views
   
   var body: some View {
-    ZStack {
-      ScrollView {
-        VStack(spacing: 24) {
-          principleSection()
-          
-          AreaTypeSegmentedControl(selectedAreaType: $store.areaType.animation())
-          
-          VStack(spacing: 16) {
-            saturationGraphSection()
-            situationSection()
-            tipSection()
-            weeklyBarChartSection()
+    if let forecast = store.forecast {
+      ZStack {
+        ScrollView {
+          VStack(spacing: 24) {
+            principleSection(forecast)
+            
+            AreaTypeSegmentedControl(selectedAreaType: $store.areaType.animation())
+            
+            VStack(spacing: 16) {
+              saturationGraphSection(forecast)
+              situationSection(forecast.situations)
+              tipSection(forecast.tips)
+              weeklyBarChartSection(forecast.weeklyValue)
+            }
           }
+          .padding(.horizontal , 28)
+          .padding(.bottom, 100)
         }
-        .padding(.horizontal , 28)
-        .padding(.bottom, 100)
+        
+        showDetailButton()
       }
-      
-      showDetailButton()
+      .background(Color("white").ignoresSafeArea())
+      .animation(.easeInOut, value: store.forecast)
+    } else {
+      ProgressView()
     }
-    .background(Color("white").ignoresSafeArea())
-    .animation(.easeInOut, value: store.forecast)
   }
   
-  private func principleSection() -> some View {
+  private func principleSection(_ forecast: MosquitoForecast) -> some View {
     HStack(spacing: 0) {
       VStack(spacing: 12) {
-        Text(store.forecast?.statusDescription ?? "")
+        Text(forecast.statusDescription)
           .font(.bmPro(size: 40))
           .foregroundColor(Color("black"))
           .frame(maxWidth: .infinity, alignment: .leading)
         
-        Text(store.forecast?.comment ?? "")
+        Text(forecast.comment)
           .font(.bmPro(size: 18))
           .foregroundColor(Color("black"))
           .frame(maxWidth: .infinity, alignment: .leading)
       }
       
-      Image(store.forecast?.imageSrc ?? "")
+      Image(forecast.imageSrc)
         .resizable()
         .scaledToFit()
     }
   }
   
-  private func saturationGraphSection() -> some View {
+  private func saturationGraphSection(_ forecast: MosquitoForecast) -> some View {
     VStack(spacing: 24) {
       VStack(spacing: 8) {
-        Text("\(store.forecast?.value.description ?? "0") - \(store.forecast?.statusDescription ?? "")")
+        Text("\(forecast.value.description) - \(forecast.statusDescription)")
           .font(.bmPro(size: 20))
           .foregroundColor(Color("black"))
           .frame(maxWidth: .infinity, alignment: .leading)
@@ -74,7 +80,7 @@ struct MainView: View {
         Group {
           Text("일 평균 모기 개체수(예측값) : ")
           +
-          Text("\(store.forecast?.valueMin ?? 0) 에서 \(store.forecast?.valueMax ?? 0)")
+          Text("\(forecast.valueMin) 에서 \(forecast.valueMax)")
         }
         .font(.bmPro(size: 14))
         .foregroundColor(Color("gray7"))
@@ -82,12 +88,12 @@ struct MainView: View {
       }
       
       // saturation graph here
-      SaturationGraph(value: store.forecast?.value ?? 0)
+      SaturationGraph(value: forecast.value)
     }
     .modifier(GroupModifier())
   }
   
-  private func situationSection() -> some View {
+  private func situationSection(_ situations: [String]) -> some View {
     VStack(spacing: 16) {
       Text("상황")
         .font(.bmPro(size: 20))
@@ -95,7 +101,7 @@ struct MainView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
       
       VStack(spacing: 8) {
-        ForEach(store.forecast?.situations ?? [], id: \.self) { situation in
+        ForEach(situations, id: \.self) { situation in
           Text("- \(situation)")
             .font(.bmPro(size: 14))
             .foregroundColor(Color("gray7"))
@@ -106,7 +112,7 @@ struct MainView: View {
     .modifier(GroupModifier())
   }
   
-  private func tipSection() -> some View {
+  private func tipSection(_ tips: [String]) -> some View {
     VStack(spacing: 16) {
       Text("모기 예방법")
         .font(.bmPro(size: 20))
@@ -114,8 +120,8 @@ struct MainView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
       
       VStack(spacing: 8) {
-        ForEach(store.forecast?.tips ?? [], id: \.self) { situation in
-          Text("- \(situation)")
+        ForEach(tips, id: \.self) { tip in
+          Text("- \(tip)")
             .font(.bmPro(size: 14))
             .foregroundColor(Color("gray7"))
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -125,8 +131,8 @@ struct MainView: View {
     .modifier(GroupModifier())
   }
   
-  private func weeklyBarChartSection() -> some View {
-    MosquitoChartView(mosquitoValues: store.forecast?.weeklyValue ?? [])
+  private func weeklyBarChartSection(_ weeklyValue: [MosquitoValue]) -> some View {
+    MosquitoChartView(mosquitoValues: weeklyValue)
       .frame(height: 192)
       .modifier(GroupModifier())
   }
