@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MosquitoForecast {
+struct MosquitoForecast: Equatable {
   var statusDescription: String
   var value: Float
   var valueMin: Int

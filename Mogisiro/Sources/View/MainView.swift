@@ -40,6 +40,7 @@ struct MainView: View {
       showDetailButton()
     }
     .background(Color("white").ignoresSafeArea())
+    .animation(.easeInOut, value: store.forecast)
   }
   
   private func principleSection() -> some View {
