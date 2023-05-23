@@ -115,6 +115,12 @@ struct MosquitoNetworkService {
       .decode(type: [TipLocal].self, decoder: decoder)
       .eraseToAnyPublisher()
   }
+  
+  func requestDetail() -> AnyPublisher<DetailLocal, Error> {
+    Just(LocalData.detail)
+      .decode(type: DetailLocal.self, decoder: decoder)
+      .eraseToAnyPublisher()
+  }
 }
 
 extension Date {

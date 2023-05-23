@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42E8E2FA2A1BC54400ABDE43 /* DetailGuidelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E8E2F92A1BC54400ABDE43 /* DetailGuidelineView.swift */; };
+		42E8E2FC2A1BCE3A00ABDE43 /* detail_local.json in Resources */ = {isa = PBXBuildFile; fileRef = 42E8E2FB2A1BCE3A00ABDE43 /* detail_local.json */; };
+		42E8E2FE2A1BCF9A00ABDE43 /* DetailLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E8E2FD2A1BCF9A00ABDE43 /* DetailLocal.swift */; };
+		42E8E3002A1CBB3800ABDE43 /* DetailViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E8E2FF2A1CBB3800ABDE43 /* DetailViewStore.swift */; };
 		8E529D222A18656000AD5E8C /* MosquitoNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E529D212A18656000AD5E8C /* MosquitoNetworkService.swift */; };
 		8E529D242A18688000AD5E8C /* MainViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E529D232A18688000AD5E8C /* MainViewStore.swift */; };
 		8E529D2E2A19D7FD00AD5E8C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8E529D2D2A19D7FD00AD5E8C /* SwiftyJSON */; };
@@ -32,6 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42E8E2F92A1BC54400ABDE43 /* DetailGuidelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGuidelineView.swift; sourceTree = "<group>"; };
+		42E8E2FB2A1BCE3A00ABDE43 /* detail_local.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detail_local.json; sourceTree = "<group>"; };
+		42E8E2FD2A1BCF9A00ABDE43 /* DetailLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLocal.swift; sourceTree = "<group>"; };
+		42E8E2FF2A1CBB3800ABDE43 /* DetailViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewStore.swift; sourceTree = "<group>"; };
 		8E529D212A18656000AD5E8C /* MosquitoNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosquitoNetworkService.swift; sourceTree = "<group>"; };
 		8E529D232A18688000AD5E8C /* MainViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewStore.swift; sourceTree = "<group>"; };
 		8E529D262A19C27B00AD5E8C /* forecast_local.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = forecast_local.json; sourceTree = "<group>"; };
@@ -75,6 +83,7 @@
 				8E529D2F2A19DD1300AD5E8C /* LocalData.swift */,
 				8E529D262A19C27B00AD5E8C /* forecast_local.json */,
 				8E529D2B2A19CC4400AD5E8C /* tips_local.json */,
+				42E8E2FB2A1BCE3A00ABDE43 /* detail_local.json */,
 			);
 			path = LocalData;
 			sourceTree = "<group>";
@@ -85,6 +94,7 @@
 				8E529D312A19E0C400AD5E8C /* ForecastLocal.swift */,
 				8EB99B232A1B08740032C02E /* TipLocal.swift */,
 				8E529D332A1A4F8600AD5E8C /* MosquitoForecast.swift */,
+				42E8E2FD2A1BCF9A00ABDE43 /* DetailLocal.swift */,
 				8EB99B3B2A1CBE1E0032C02E /* MosquitoValue.swift */,
 				8EB99B412A1CC5390032C02E /* AreaType.swift */,
 			);
@@ -97,7 +107,9 @@
 				8EAD17022A14CFCC00E0C812 /* Mogisiro */,
 				8EAD17012A14CFCC00E0C812 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		8EAD17012A14CFCC00E0C812 /* Products */ = {
 			isa = PBXGroup;
@@ -138,6 +150,8 @@
 			children = (
 				8EAD17052A14CFCC00E0C812 /* MainView.swift */,
 				8E529D232A18688000AD5E8C /* MainViewStore.swift */,
+				42E8E2FF2A1CBB3800ABDE43 /* DetailViewStore.swift */,
+				42E8E2F92A1BC54400ABDE43 /* DetailGuidelineView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,6 +276,7 @@
 				8EAD170B2A14CFCD00E0C812 /* Preview Assets.xcassets in Resources */,
 				8EAD17082A14CFCD00E0C812 /* Assets.xcassets in Resources */,
 				8EB99B222A1A845C0032C02E /* tips_local.json in Resources */,
+				42E8E2FC2A1BCE3A00ABDE43 /* detail_local.json in Resources */,
 				8EB99B282A1B201A0032C02E /* BMHANNAPro.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +302,9 @@
 				8EB99B422A1CC5390032C02E /* AreaType.swift in Sources */,
 				8EB99B332A1CAC9A0032C02E /* SaturationGraph.swift in Sources */,
 				8E529D322A19E0C400AD5E8C /* ForecastLocal.swift in Sources */,
+				42E8E2FA2A1BC54400ABDE43 /* DetailGuidelineView.swift in Sources */,
+				42E8E2FE2A1BCF9A00ABDE43 /* DetailLocal.swift in Sources */,
+				42E8E3002A1CBB3800ABDE43 /* DetailViewStore.swift in Sources */,
 				8EB99B2F2A1CA7070032C02E /* SegmentedControl.swift in Sources */,
 				8EB99B2C2A1B222C0032C02E /* Font+bmpro.swift in Sources */,
 			);
