@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct TipLocal: Decodable {
-    let situation: String
-    let tips: [SubTip]
+struct TipLocal: Decodable, Hashable{
+  let situation: String
+  let tips: [SubTip]
 }
 
-struct SubTip: Decodable {
-    let title: String
-    let subTips: [String]
+struct SubTip: Decodable, Hashable {
+  let title: String
+  let subTips: [String]
 }
