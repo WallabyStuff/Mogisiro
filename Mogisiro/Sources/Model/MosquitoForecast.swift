@@ -16,5 +16,5 @@ struct MosquitoForecast {
   var imageSrc: String
   var situations: [String]
   var tips: [String]
-  var weeklyValue: [Float]
+  var weeklyValue: [MosquitoValue]
 }

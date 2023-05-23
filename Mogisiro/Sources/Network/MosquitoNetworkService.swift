@@ -22,19 +22,14 @@ struct MosquitoNetworkService {
   enum APIError: Error {
     case invalidData
   }
-  enum ValueType: String {
-    case house = "MOSQUITO_VALUE_HOUSE"
-    case park = "MOSQUITO_VALUE_PARK"
-    case water = "MOSQUITO_VALUE_WATER"
-  }
-  
+
   private let basePath = "http://openapi.seoul.go.kr:8088"
   private let decoder = JSONDecoder()
   
   
   // MARK: - Methods
   
-  func requestDaily(_ date: Date, type: ValueType) -> AnyPublisher<Float, Error> {
+  func requestDaily(_ date: Date, type: AreaType) -> AnyPublisher<MosquitoValue, Error> {
     let path = "\(basePath)/\(Self.API_KEY)/json/MosquitoStatus/1/7/\(date.apiDateFormat)"
     guard let url = URL(string: path) else {
       return Fail(error: APIError.invalidData).eraseToAnyPublisher()
@@ -49,14 +44,15 @@ struct MosquitoNetworkService {
         
         return data
       }
-      .map { data -> Float in
+      .map { data -> MosquitoValue in
         let json = JSON(data)
-        return json["MosquitoStatus"]["row"][0][type.rawValue].floatValue
+        let value = json["MosquitoStatus"]["row"][0][type.codingKey].floatValue
+        return MosquitoValue(value: value, date: date)
       }
       .eraseToAnyPublisher()
   }
   
-  func requestWeekly(_ endDate: Date, type: ValueType) -> AnyPublisher<[Float], Error> {
+  func requestWeekly(_ endDate: Date, type: AreaType) -> AnyPublisher<[MosquitoValue], Error> {
     let endDate = Date()
     let startDate = Calendar.current.date(byAdding: .day, value: -6, to: endDate)
     
@@ -65,10 +61,13 @@ struct MosquitoNetworkService {
       .map { index -> Date in
         Calendar.current.date(byAdding: .day, value: index, to: startDate ?? Date()) ?? Date()
       }
-      .flatMap { date -> AnyPublisher<Float, Error> in
+      .flatMap { date -> AnyPublisher<MosquitoValue, Error> in
         return requestDaily(date, type: type)
       }
       .collect()
+      .map { mosquitoValues in
+        return mosquitoValues.sorted(by: { $0.date < $1.date })
+      }
       .eraseToAnyPublisher()
   }
   
@@ -92,8 +91,8 @@ struct MosquitoNetworkService {
       .eraseToAnyPublisher()
   }
   
-  func requestForecastWeekly(_ weeklyValue: [Float]) -> AnyPublisher<MosquitoForecast, Error> {
-    let todayValue = weeklyValue.last!
+  func requestForecastWeekly(_ weeklyValue: [MosquitoValue]) -> AnyPublisher<MosquitoForecast, Error> {
+    let todayValue = weeklyValue.last!.value
     
     return requestForecastDaily(todayValue)
       .map { forecastLocal -> MosquitoForecast in
