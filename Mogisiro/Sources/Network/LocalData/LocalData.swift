@@ -17,4 +17,9 @@ enum LocalData {
     let url = Bundle.main.url(forResource: "tips_local", withExtension: "json")!
     return try! Data(contentsOf: url)
   }()
+  
+  static let detail: Data = {
+    let url = Bundle.main.url(forResource: "detail_local", withExtension: "json")!
+    return try! Data(contentsOf: url)
+  }()
 }
