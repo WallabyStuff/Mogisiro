@@ -14,7 +14,7 @@
 		8E529D322A19E0C400AD5E8C /* ForecastLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E529D312A19E0C400AD5E8C /* ForecastLocal.swift */; };
 		8E529D342A1A4F8600AD5E8C /* MosquitoForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E529D332A1A4F8600AD5E8C /* MosquitoForecast.swift */; };
 		8EAD17042A14CFCC00E0C812 /* MogisiroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD17032A14CFCC00E0C812 /* MogisiroApp.swift */; };
-		8EAD17062A14CFCC00E0C812 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD17052A14CFCC00E0C812 /* ContentView.swift */; };
+		8EAD17062A14CFCC00E0C812 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD17052A14CFCC00E0C812 /* MainView.swift */; };
 		8EAD17082A14CFCD00E0C812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EAD17072A14CFCD00E0C812 /* Assets.xcassets */; };
 		8EAD170B2A14CFCD00E0C812 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EAD170A2A14CFCD00E0C812 /* Preview Assets.xcassets */; };
 		8EB99B212A1A845C0032C02E /* forecast_local.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E529D262A19C27B00AD5E8C /* forecast_local.json */; };
@@ -22,6 +22,13 @@
 		8EB99B242A1B08740032C02E /* TipLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B232A1B08740032C02E /* TipLocal.swift */; };
 		8EB99B282A1B201A0032C02E /* BMHANNAPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EB99B272A1B20160032C02E /* BMHANNAPro.ttf */; };
 		8EB99B2C2A1B222C0032C02E /* Font+bmpro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B2B2A1B222C0032C02E /* Font+bmpro.swift */; };
+		8EB99B2F2A1CA7070032C02E /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B2E2A1CA7070032C02E /* SegmentedControl.swift */; };
+		8EB99B312A1CA8C70032C02E /* GroupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B302A1CA8C70032C02E /* GroupModifier.swift */; };
+		8EB99B332A1CAC9A0032C02E /* SaturationGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B322A1CAC9A0032C02E /* SaturationGraph.swift */; };
+		8EB99B3A2A1CB5E20032C02E /* MosquitoChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B392A1CB5E20032C02E /* MosquitoChartView.swift */; };
+		8EB99B3C2A1CBE1E0032C02E /* MosquitoValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B3B2A1CBE1E0032C02E /* MosquitoValue.swift */; };
+		8EB99B402A1CC4B40032C02E /* AreaTypeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B3F2A1CC4B40032C02E /* AreaTypeSegmentedControl.swift */; };
+		8EB99B422A1CC5390032C02E /* AreaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B412A1CC5390032C02E /* AreaType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,13 +41,20 @@
 		8E529D332A1A4F8600AD5E8C /* MosquitoForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosquitoForecast.swift; sourceTree = "<group>"; };
 		8EAD17002A14CFCC00E0C812 /* Mogisiro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mogisiro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EAD17032A14CFCC00E0C812 /* MogisiroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MogisiroApp.swift; sourceTree = "<group>"; };
-		8EAD17052A14CFCC00E0C812 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8EAD17052A14CFCC00E0C812 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8EAD17072A14CFCD00E0C812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EAD170A2A14CFCD00E0C812 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8EAD171C2A14F08800E0C812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EB99B232A1B08740032C02E /* TipLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipLocal.swift; sourceTree = "<group>"; };
 		8EB99B272A1B20160032C02E /* BMHANNAPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNAPro.ttf; sourceTree = "<group>"; };
 		8EB99B2B2A1B222C0032C02E /* Font+bmpro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+bmpro.swift"; sourceTree = "<group>"; };
+		8EB99B2E2A1CA7070032C02E /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
+		8EB99B302A1CA8C70032C02E /* GroupModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModifier.swift; sourceTree = "<group>"; };
+		8EB99B322A1CAC9A0032C02E /* SaturationGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationGraph.swift; sourceTree = "<group>"; };
+		8EB99B392A1CB5E20032C02E /* MosquitoChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosquitoChartView.swift; sourceTree = "<group>"; };
+		8EB99B3B2A1CBE1E0032C02E /* MosquitoValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosquitoValue.swift; sourceTree = "<group>"; };
+		8EB99B3F2A1CC4B40032C02E /* AreaTypeSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTypeSegmentedControl.swift; sourceTree = "<group>"; };
+		8EB99B412A1CC5390032C02E /* AreaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +85,8 @@
 				8E529D312A19E0C400AD5E8C /* ForecastLocal.swift */,
 				8EB99B232A1B08740032C02E /* TipLocal.swift */,
 				8E529D332A1A4F8600AD5E8C /* MosquitoForecast.swift */,
+				8EB99B3B2A1CBE1E0032C02E /* MosquitoValue.swift */,
+				8EB99B412A1CC5390032C02E /* AreaType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,7 +136,7 @@
 		8EAD171B2A14EC0400E0C812 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8EAD17052A14CFCC00E0C812 /* ContentView.swift */,
+				8EAD17052A14CFCC00E0C812 /* MainView.swift */,
 				8E529D232A18688000AD5E8C /* MainViewStore.swift */,
 			);
 			path = View;
@@ -151,6 +167,7 @@
 				8E529D2A2A19C5FF00AD5E8C /* Model */,
 				8EAD171A2A14EBFB00E0C812 /* Network */,
 				8EAD171B2A14EC0400E0C812 /* View */,
+				8EB99B2D2A1CA6680032C02E /* Components */,
 				8EB99B2A2A1B22040032C02E /* Utils */,
 				8EAD17092A14CFCD00E0C812 /* Preview Content */,
 			);
@@ -163,6 +180,18 @@
 				8EB99B2B2A1B222C0032C02E /* Font+bmpro.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8EB99B2D2A1CA6680032C02E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8EB99B2E2A1CA7070032C02E /* SegmentedControl.swift */,
+				8EB99B302A1CA8C70032C02E /* GroupModifier.swift */,
+				8EB99B322A1CAC9A0032C02E /* SaturationGraph.swift */,
+				8EB99B392A1CB5E20032C02E /* MosquitoChartView.swift */,
+				8EB99B3F2A1CC4B40032C02E /* AreaTypeSegmentedControl.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,14 +273,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB99B402A1CC4B40032C02E /* AreaTypeSegmentedControl.swift in Sources */,
 				8E529D222A18656000AD5E8C /* MosquitoNetworkService.swift in Sources */,
-				8EAD17062A14CFCC00E0C812 /* ContentView.swift in Sources */,
+				8EB99B312A1CA8C70032C02E /* GroupModifier.swift in Sources */,
+				8EAD17062A14CFCC00E0C812 /* MainView.swift in Sources */,
 				8EAD17042A14CFCC00E0C812 /* MogisiroApp.swift in Sources */,
 				8E529D242A18688000AD5E8C /* MainViewStore.swift in Sources */,
 				8E529D302A19DD1300AD5E8C /* LocalData.swift in Sources */,
+				8EB99B3C2A1CBE1E0032C02E /* MosquitoValue.swift in Sources */,
+				8EB99B3A2A1CB5E20032C02E /* MosquitoChartView.swift in Sources */,
 				8EB99B242A1B08740032C02E /* TipLocal.swift in Sources */,
 				8E529D342A1A4F8600AD5E8C /* MosquitoForecast.swift in Sources */,
+				8EB99B422A1CC5390032C02E /* AreaType.swift in Sources */,
+				8EB99B332A1CAC9A0032C02E /* SaturationGraph.swift in Sources */,
 				8E529D322A19E0C400AD5E8C /* ForecastLocal.swift in Sources */,
+				8EB99B2F2A1CA7070032C02E /* SegmentedControl.swift in Sources */,
 				8EB99B2C2A1B222C0032C02E /* Font+bmpro.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,8 +426,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,8 +457,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
