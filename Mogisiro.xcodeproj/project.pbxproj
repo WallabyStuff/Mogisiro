@@ -17,9 +17,6 @@
 		8EAD17062A14CFCC00E0C812 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD17052A14CFCC00E0C812 /* ContentView.swift */; };
 		8EAD17082A14CFCD00E0C812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EAD17072A14CFCD00E0C812 /* Assets.xcassets */; };
 		8EAD170B2A14CFCD00E0C812 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EAD170A2A14CFCD00E0C812 /* Preview Assets.xcassets */; };
-		8EAD17122A14D9AD00E0C812 /* MosquitoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD17112A14D9AD00E0C812 /* MosquitoAPI.swift */; };
-		8EAD17152A14D9E700E0C812 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8EAD17142A14D9E700E0C812 /* CombineMoya */; };
-		8EAD17172A14D9E700E0C812 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8EAD17162A14D9E700E0C812 /* Moya */; };
 		8EB99B212A1A845C0032C02E /* forecast_local.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E529D262A19C27B00AD5E8C /* forecast_local.json */; };
 		8EB99B222A1A845C0032C02E /* tips_local.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E529D2B2A19CC4400AD5E8C /* tips_local.json */; };
 		8EB99B242A1B08740032C02E /* TipLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB99B232A1B08740032C02E /* TipLocal.swift */; };
@@ -40,7 +37,6 @@
 		8EAD17052A14CFCC00E0C812 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8EAD17072A14CFCD00E0C812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EAD170A2A14CFCD00E0C812 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8EAD17112A14D9AD00E0C812 /* MosquitoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosquitoAPI.swift; sourceTree = "<group>"; };
 		8EAD171C2A14F08800E0C812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EB99B232A1B08740032C02E /* TipLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipLocal.swift; sourceTree = "<group>"; };
 		8EB99B272A1B20160032C02E /* BMHANNAPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNAPro.ttf; sourceTree = "<group>"; };
@@ -53,8 +49,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E529D2E2A19D7FD00AD5E8C /* SwiftyJSON in Frameworks */,
-				8EAD17172A14D9E700E0C812 /* Moya in Frameworks */,
-				8EAD17152A14D9E700E0C812 /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +111,6 @@
 		8EAD171A2A14EBFB00E0C812 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				8EAD17112A14D9AD00E0C812 /* MosquitoAPI.swift */,
 				8E529D212A18656000AD5E8C /* MosquitoNetworkService.swift */,
 				8E529D252A19C20600AD5E8C /* LocalData */,
 			);
@@ -189,8 +182,6 @@
 			);
 			name = Mogisiro;
 			packageProductDependencies = (
-				8EAD17142A14D9E700E0C812 /* CombineMoya */,
-				8EAD17162A14D9E700E0C812 /* Moya */,
 				8E529D2D2A19D7FD00AD5E8C /* SwiftyJSON */,
 			);
 			productName = Mogisiro;
@@ -222,7 +213,6 @@
 			);
 			mainGroup = 8EAD16F72A14CFCC00E0C812;
 			packageReferences = (
-				8EAD17132A14D9E700E0C812 /* XCRemoteSwiftPackageReference "Moya" */,
 				8E529D2C2A19D7FD00AD5E8C /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 8EAD17012A14CFCC00E0C812 /* Products */;
@@ -257,7 +247,6 @@
 				8E529D222A18656000AD5E8C /* MosquitoNetworkService.swift in Sources */,
 				8EAD17062A14CFCC00E0C812 /* ContentView.swift in Sources */,
 				8EAD17042A14CFCC00E0C812 /* MogisiroApp.swift in Sources */,
-				8EAD17122A14D9AD00E0C812 /* MosquitoAPI.swift in Sources */,
 				8E529D242A18688000AD5E8C /* MainViewStore.swift in Sources */,
 				8E529D302A19DD1300AD5E8C /* LocalData.swift in Sources */,
 				8EB99B242A1B08740032C02E /* TipLocal.swift in Sources */,
@@ -478,14 +467,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		8EAD17132A14D9E700E0C812 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -493,16 +474,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8E529D2C2A19D7FD00AD5E8C /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
-		};
-		8EAD17142A14D9E700E0C812 /* CombineMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8EAD17132A14D9E700E0C812 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = CombineMoya;
-		};
-		8EAD17162A14D9E700E0C812 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8EAD17132A14D9E700E0C812 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
