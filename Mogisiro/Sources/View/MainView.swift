@@ -45,6 +45,7 @@ struct MainView: View {
       }
       .background(Color("white").ignoresSafeArea())
       .animation(.easeInOut, value: store.forecast)
+      .frame(maxWidth: 520)
     } else {
       ProgressView()
     }
