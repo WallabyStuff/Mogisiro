@@ -14,7 +14,7 @@ struct MosquitoNetworkService {
   
   // MARK: - Constants
   
-  static let API_KEY = "795876734957616c38394a43424c45"
+  static let API_KEY = Bundle.main.apiKey
   
   
   // MARK: - Properties
